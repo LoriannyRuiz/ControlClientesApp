@@ -1,0 +1,6 @@
+@ControlClientesBack_HostAddress = http://localhost:5287
+
+GET {{ControlClientesBack_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
