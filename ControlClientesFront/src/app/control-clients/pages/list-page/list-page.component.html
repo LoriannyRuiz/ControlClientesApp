@@ -1,1 +1,25 @@
-<p>list-page works!</p>
+<div class="container">
+  <div class="row">
+    <h1 class="mt-5">LISTA DE LOS CLIENTES DE LR&A</h1>
+    <div class="col-md-4 mt-5" *ngFor="let client of clients">
+      <div class="card mb-3">
+        <div class="card-body">
+          <div class="d-flex justify-content-end mb-3">
+            <a class="btn btn-primary" [routerLink]="['/clients/update-clients/', client.id]">
+              <i class="fas fa-pencil-alt"></i>
+            </a>
+          </div>
+          <h5 class="card-title">{{ client.nombre +" "+ client.apellido }}</h5>
+          <p class="card-text">Teléfono: {{ client.telefono }}</p>
+        </div>
+        <div class="card-footer bg-transparent">
+          <a class="btn btn-primary btn-block" [routerLink]="['/address/list-address/', client.id]">
+            Ver Direcciones
+          </a>
+      </div>
+    </div>
+    <div class="col-md-12" *ngIf="clients.length === 0">
+      <p>Aún no hay clientes agregados.</p>
+    </div>
+  </div>
+</div>

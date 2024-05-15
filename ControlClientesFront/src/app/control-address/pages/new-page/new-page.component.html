@@ -1,1 +1,25 @@
-<p>new-page works!</p>
+<form [formGroup]="myForm" (ngSubmit)="submitForm()">
+  <div class="container formAdd small-form">
+    <div class="card mt-5">
+      <div class="card-body">
+        <h1 class="card-title text-center">AGREGAR DIRECCION</h1>
+          <div class="mb-3">
+            <label for="ciudad" class="form-label">CIUDAD</label>
+            <input type="text" class="form-control" id="ciudad" formControlName="ciudad">
+          </div>
+          <div class="mb-3">
+            <label for="calle" class="form-label">DIRECCION COMPLETA</label>
+            <input type="text" class="form-control" id="calle" formControlName="calle">
+          </div>
+          <div *ngIf="showmessage" class="mensajeconfirmacion">
+            <p>{{ showmessage }}</p>
+          </div>
+          <div class="buttons-container d-flex justify-content-end">
+          <button type="submit" class="btn btn-primary">AGREGAR DIRECCION</button>
+          </div>
+      </div>
+    </div>
+  </div>
+  </form>
+
+

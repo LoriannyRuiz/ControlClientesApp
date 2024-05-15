@@ -7,7 +7,7 @@ import { UpdatePageComponent } from './pages/update-page/update-page.component';
 const routes: Routes = [
 
   {
-    path: 'list-address',
+    path: 'list-address/:id',
     component: ListPageComponent,
   },
   {
@@ -15,7 +15,7 @@ const routes: Routes = [
     component: NewPageComponent,
   },
   {
-    path: 'update-address',
+    path: 'update-address/:id',
     component: UpdatePageComponent
   },
   {
@@ -25,7 +25,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'list-address'
+    redirectTo: 'new-address'
   },
 
 

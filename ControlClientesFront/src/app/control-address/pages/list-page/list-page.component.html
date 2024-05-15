@@ -1,1 +1,26 @@
-<p>list-page works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 d-flex justify-content-between align-items-center">
+      <h1 class="mt-5">DIRECCIONES ASOCIADAS AL CLIENTE</h1>
+      <button class="btn btn-primary" [routerLink]="['/address/new-address/']">Agregar Direccion</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 mt-5" *ngFor="let Address of address">
+      <div class="card mb-3">
+        <div class="card-body">
+          <div class="d-flex justify-content-end mb-3">
+            <a class="btn btn-primary" [routerLink]="['/address/update-clients/', Address.id]">
+              <i class="fas fa-pencil-alt"></i>
+            </a>
+          </div>
+          <h5 class="card-title">{{ Address.ciudad }}</h5>
+          <p class="card-text">DIRECCION: {{ Address.calle }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12" *ngIf="address.length === 0">
+      <h3>Aún no hay clientes agregados.</h3>
+    </div>
+  </div>
+</div>

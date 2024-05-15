@@ -26,7 +26,19 @@ namespace ControlClientesBack
             var connectionString = _configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<ControlClientesContext>(options =>
                 options.UseNpgsql(connectionString));
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin", builder =>
+                    builder.AllowAnyOrigin()
+                            .WithOrigins("http://localhost:4200")
+                           .AllowAnyMethod()
+                           .AllowAnyHeader());
+            });
+
+
         }
+
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -40,6 +52,7 @@ namespace ControlClientesBack
             }
 
             app.Migrations();
+            app.UseCors("AllowSpecificOrigin");
 
             app.UseHttpsRedirection();
             app.UseAuthorization();

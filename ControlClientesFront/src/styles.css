@@ -1,2 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
-
+.mensajeconfirmacion{
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Sometype Mono';
+  font-size: 15px;
+  font-weight: bold;
+  color: red;
+}
+.btn-block {
+  width: 100%;
+}
+.small-form {
+  max-width: 800px;
+  margin: 0 auto;
+}

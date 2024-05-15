@@ -15,7 +15,7 @@ const routes: Routes = [
     component: NewPageComponent,
   },
   {
-    path: 'update-clients',
+    path: 'update-clients/:id',
     component: UpdatePageComponent
   },
   {
