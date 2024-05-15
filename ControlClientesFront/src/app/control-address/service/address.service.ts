@@ -20,12 +20,12 @@ export class AddressService {
     let Link = this.apiUrl + "/api/Direcciones"
     return this.http.post<any[]>(Link, address)
   }
-  putClient(id: number, client : any): Observable<any[]> {
-    let Link = this.apiUrl + "/api/Clientes/"+id
+  putAddress(id: number, client : any): Observable<any[]> {
+    let Link = this.apiUrl + "/api/Direcciones/"+id
     return this.http.put<any[]>(Link, client)
   }
-  deleteClient(id: number): Observable<any[]> {
-    let Link = this.apiUrl + "/api/Clientes/"+id
+  deleteAddress(id: number): Observable<any[]> {
+    let Link = this.apiUrl + "/api/Direcciones/"+id
     return this.http.delete<any[]>(Link)
   }
 

@@ -36,6 +36,5 @@ console.log(this.address)
     });
   }
 
-  
 
 }

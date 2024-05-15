@@ -13,8 +13,8 @@ export class ListPageComponent {
   constructor(private clientsService: ClientsService) { }
 
   ngOnInit() {
-    this.clientsService.getAllClients().subscribe(clients => {
-      this.clients = clients;
+    this.clientsService.getAllClients().subscribe(client => {
+      this.clients = client;
     });
   }
 }

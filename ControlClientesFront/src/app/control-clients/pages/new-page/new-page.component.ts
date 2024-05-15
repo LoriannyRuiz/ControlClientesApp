@@ -72,7 +72,9 @@ export class NewPageComponent implements OnInit {
 
   }
 
-
+  goBack(){
+    this.router.navigate(['/clients/list-clients']);
+  }
 
 
 
